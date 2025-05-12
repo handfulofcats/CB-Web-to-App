@@ -13,6 +13,73 @@
 <body>
   <div id="content">Loading…</div>
   <button id="close">Done</button>
-  <script src="ui.js"></script>
+  <script>
+parent.postMessage({ pluginMessage: { type: 'ui-loaded' } }, '*');
+
+window.onmessage = (event) => {
+    const msg = event.data.pluginMessage;
+    const container = document.getElementById('content');  
+
+    // initialize routines
+    if (msg.type === 'init') {
+
+        // export component data command
+        if (msg.command === 'export-library') {
+
+            container.innerHTML = `
+                <p>Copy the JSON of all local components & variant sets below:</p>
+                <textarea id="output" readonly></textarea><br/>
+            `;
+
+            parent.postMessage({ pluginMessage: { type: 'request-export-data' } }, '*');
+        }
+    }
+
+    // output component data
+    if (msg.type === 'export-data') {
+        const data = msg.payload;
+        const ta = document.getElementById('output');
+        ta.value = JSON.stringify(data, null, 2);
+    }
+
+    // output report
+    if (msg.type === 'migration-complete') {
+      const errors = msg.errors;
+      const direction = msg.direction;
+      if (msg.errors.length) {
+        container.innerHTML = `
+          <p>Ran migration from ${(direction === 'to-app')?`web to app`:`app to web`}</p>
+          <p>Here's a list of errors during the migration:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>component name</th>
+                <th>Stage</th>
+                <th>Error message</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${() => { 
+                for (const error in errors) {
+                  `
+                  <tr>
+                    <td>${error.componentName}</td>
+                    <td>${error.stage}</td>
+                    <td>${error.errorMessage}</td>
+                  </tr>`
+                }
+              }}
+            </tbody>
+          </table>`
+        }
+      }
+      
+};
+
+// close button
+document.getElementById('close').addEventListener('click', () => {
+    parent.postMessage({ pluginMessage: { type: 'close-plugin'} }, '*');
+});
+  </script>
 </body>
 </html>

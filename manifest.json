@@ -11,7 +11,12 @@
   ],
   "ui": "dist/ui.html",
   "menu": [
-    { "name": "Migrate Selection…",      "command": "migrate" },
+    { "name": "Migrate Selection", 
+      "menu" : [
+        { "name": "Migrate to App", "command": "to-app" },
+        { "name": "Migrate to Web", "command": "to-web"}
+      ]
+    },
     { "name": "Export Library Components", "command": "export-library" }
   ],
   "networkAccess": {

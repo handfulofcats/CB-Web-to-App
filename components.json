@@ -1,0 +1,288 @@
+{
+  "matches": [
+    {
+      "name": "Actions - Button",
+      "webKey": "d3966af7dd87631a6a1bf9e665527ab62511b3ee",
+      "appKey": "fa2f71c7e6287ea75e6f4c679aee4112ef642b46"
+    },
+    {
+      "name": "Actions - Link",
+      "webKey": "63de59b0ab39a70a92f8804b47284fbbe1e287c4",
+      "appKey": "6471ed69dc944ab6b5ed54ecfabe186e718eda74"
+    },
+    {
+      "name": "Controls - Checkbox",
+      "webKey": "dd8eb1962f65b9dac9fbb3eacd1e1c176e6a5683",
+      "appKey": "061199d3fa4cf00a7c9da30dfbc649f81d1c50f0"
+    },
+    {
+      "name": "Controls - Radio Button",
+      "webKey": "957909346e8d00871f50a58fcc775915311a311e",
+      "appKey": "c71b631d7a917e60927e391816d249a92816a207"
+    },
+    {
+      "name": "Forms - Select",
+      "webKey": "ef32bc437bbce078f4dd231db52e265e656e63c5",
+      "appKey": "eedfb366562f399292c2d7e7b6687d2e5a9a01cb"
+    },
+    {
+      "name": "Forms - Textarea",
+      "webKey": "1e4ab2188fc71ed55db1c0f3030ba8d8c20f3bcb",
+      "appKey": "3ecabede00d366c0a584c8e96f84e4dfc5085c76"
+    },
+    {
+      "name": "Divider",
+      "webKey": "f67758642f1323f68cdd76144cbd45df5922bb88",
+      "appKey": "207c42048033df7864d2409cbf7830d57db49e1a"
+    },
+    {
+      "name": "Forms - Input field",
+      "webKey": "dcd244a8ea17a20a13a5f62ea6ad3acc851be7f4",
+      "appKey": "e4b882bdb8648e01a94b9e760c1bb69b3a19a937"
+    },
+    {
+      "name": "Card",
+      "webKey": "7ca37d4fe70ff14b0c57759169675de60cf55870",
+      "appKey": "5615a0762bacc513a210f72c526cf1d8ed05f59b"
+    },
+    {
+      "name": "FactSlogan",
+      "webKey": "68abe89e9ec4846caa855e36765892b545077d9f",
+      "appKey": "e9bf736ee403c77a5113efdf74511a3831cbe3b7"
+    },
+    {
+      "name": "Carousel",
+      "webKey": "20c03c3bbf254220042e38b1078d4bc3141dbf95",
+      "appKey": "0075d625a50a996abbd5c15422dad08fcf469edf"
+    },
+    {
+      "name": "Sticky Bar",
+      "webKey": "d161a282c83ca0b04e0fdc636471dd0c4871aa6a",
+      "appKey": "0c442be6fbd45dfdcda592bfb1a771d0e347021a"
+    },
+    {
+      "name": "Review Rating",
+      "webKey": "3573147d42c87aa00e042da1d93dcf8b40b09994",
+      "appKey": "29df6666111277c6f3126c72aa8a2edd59e338c5"
+    },
+    {
+      "name": "Badge",
+      "webKey": "090be0e363fe0811957a6b9c969727bbe2d4f66b",
+      "appKey": "fedcb1ed38397fe937c4e00b507608e23ca10561"
+    },
+    {
+      "name": "Alert",
+      "webKey": "e38ceeced515996277ccfa4a0befb8f7ff6a7106",
+      "appKey": "0a349cc838722779281c05d83a1ab5f018eef8dd"
+    },
+    {
+      "name": "Tag",
+      "webKey": "a8884ccc8e84fa30c743732898287c0788e209cc",
+      "appKey": "a2b2166cd9c70bb8bb5f87d2d2e3dead42d3cede"
+    },
+    {
+      "name": "List",
+      "webKey": "26f995fd52faec29bc4d4b3b5d823237be1ad985",
+      "appKey": "cc0f92a50d29cf1e7f8938fe0f458074d02f31e5"
+    },
+    {
+      "name": "Video Container",
+      "webKey": "4b093305a8a7541ec2b1c563e9d90eeff4d51c17",
+      "appKey": "6836604e058754b0d2a75351c24507096ac8f882"
+    },
+    {
+      "name": "Table",
+      "webKey": "e7e623fbd50fed8773f18a84e2172dfc421cc860",
+      "appKey": "34d1bcf4225684ad4816038fe43053a0a04c9d74"
+    },
+    {
+      "name": "Accordion",
+      "webKey": "d6a3c46fe74e622b0408fec77d5ffd822125fd88",
+      "appKey": "88dd8965822e7c3386413d4768976a3745c97ab5"
+    },
+    {
+      "name": "Chip",
+      "webKey": "a44f73f9d4f261d2a7e55aeae65a29cf1aee2d99",
+      "appKey": "e87f98195d60c0a0801ac5c3b1b7c05c3ed570ba"
+    },
+    {
+      "name": "Loader",
+      "webKey": "7605461c03e451f7f0396517c0fc70d58cce6495",
+      "appKey": "673de7d6a3cfccbfe5d61db111ee7b6f44f175d8"
+    },
+    {
+      "name": "Snackbar",
+      "webKey": "5900d4f768e57c2a5d6620a2fcf1926fde5ab1fc",
+      "appKey": "ee675bd2669308b15b22df7188c0268736326167"
+    },
+    {
+      "name": "Stepper",
+      "webKey": "7001b807534fc948bbf778e02aeafa193e5ae90d",
+      "appKey": "04a0e09fe81c5f1bbd96b92f03b6c18fdd5275f4"
+    },
+    {
+      "name": "Skeleton",
+      "webKey": "57a9aa3d45fc90540839918179d5acd2f5cda261",
+      "appKey": "73f88bdd9c19a07b45e5745f785ff062f1af5cb9"
+    },
+    
+    {
+      "name": "Forms - Search",
+      "webKey": "658379312c447e2c24ef4e4f5566e576949aa1d3",
+      "appKey": "84b9281eb87a5d76f8ed6a23846040ef320fd436"
+    },
+    {
+      "name": "Controls - Slider",
+      "webKey": "68002de12206b4334054cf1b86694bede8ad3a6b",
+      "appKey": "5f07a63fc462a916dd1c6c0cd14f0e1f3176c6fc"
+    }
+  ],
+  "unmatchedFreddy": [
+    {
+      "name": "Tooltip [Freddy UI Kit]",
+      "key": "68a95c2ce3be854611d4aa7b37e352e3f4acefe9"
+    },
+    {
+      "name": "Form Label [Freddy UI Kit]",
+      "key": "b06bdebe34fb6bbe7e62db6907c2a476b2e273d8"
+    },
+    {
+      "name": "Skip Links [Freddy UI Kit]",
+      "key": "505a6898b5b5f027c02b18d91cd07dd7e08014ba"
+    },
+    {
+      "name": "Menu [Freddy UI Kit]",
+      "key": "a4ea4cb060bdc70a5d16dcd97d5e7ceddb1e4244"
+    },
+    {
+      "name": "Map - Container [Freddy UI Kit]",
+      "key": "2b5cfe6dc6478dd49976fe2b02c59dd286ee3ec4"
+    },
+    {
+      "name": "Actions - Icon Button [Freddy UI Kit]",
+      "key": "64a12cf9da367615a0a0f636cc7b5e5142d8bdfe"
+    },
+    {
+      "name": "Controls - Switch toggle [Freddy UI Kit]",
+      "key": "0ccefb3d2776806c4529a233b021942bf04f6996"
+    },
+    {
+      "name": "Forms - Number Step Input [Freddy UI Kit]",
+      "key": "2f02b2871565e844f0fba89129c9892d0fbb7b53"
+    },
+    {
+      "name": "Forms - Password strength [Freddy UI Kit]",
+      "key": "f7891272d358579a8ca962e05724fae07beb1698"
+    },
+    {
+      "name": "Overlays - Modal [Freddy UI Kit]",
+      "key": "4d85c6815df539cc9644501512eb6e512bd60bab"
+    },
+    {
+      "name": "Overlays - Drawer [Freddy UI Kit]",
+      "key": "17cb70f0ac50e469f99da7fbe04c3b7b4b8c8412"
+    },
+    {
+      "name": "Numerical Marker [Freddy UI Kit]",
+      "key": "ac71e16a292f85b9833dfdb2627682ec1a561bd6"
+    },
+    {
+      "name": "Breadcrumb [Freddy UI Kit]",
+      "key": "d05db46b83ff9ca98029cf07bc73da68f5612062"
+    },
+    {
+      "name": "Pagination [Freddy UI Kit]",
+      "key": "7a7c016771354813b8e56be9770f1006f9bdb089"
+    },
+    {
+      "name": "Icon [Freddy UI Kit]",
+      "key": "3c3f0e1f3108286c7dcc228039ba4724d519873b"
+    },
+    {
+      "name": "Side Navigation [Freddy UI Kit]",
+      "key": "07285d60bd80b86c490cb955892a2666fb335e41"
+    },
+    {
+      "name": "Tabs [Freddy UI Kit]",
+      "key": "aee211dea54c866dafee3fa8333776e7a9e252c3"
+    },
+    {
+      "name": "Collapse [Freddy UI Kit]",
+      "key": "b47953707b562adb488e85a8e0a716ccb4b3dfca"
+    },
+    {
+      "name": "Popover [Freddy UI Kit]",
+      "key": "55557d0a0e44c724bb6ca1b8e836b9a1bba07b54"
+    },
+    {
+      "name": "Map - Marker [Freddy UI Kit]",
+      "key": "43bbdad43da9fa4d2e74217269f2b5e83b6c7537"
+    }
+  ],
+  "unmatchedApp": [
+    {
+      "name": "Native - Action Sheet iOS [Mobile App UI Kit]",
+      "key": "85a41c1f3389815a73a76c840c826507c8e072af"
+    },
+    {
+      "name": "Native - Sheet [Mobile App UI Kit]",
+      "key": "203878bdd550412da9b6dd9133277d567951842a"
+    },
+    {
+      "name": "Utilities - Placeholder (small)",
+      "key": "f733f821c643dd4d2576c92f73d5c39d6bdd3e25"
+    },
+    {
+      "name": "Templates - Main screen [Mobile App UI Kit]",
+      "key": "75929a3516f66f7ca73288e58057c784a3b1d5ad"
+    },
+    {
+      "name": "Native - Alert/Dialog [Mobile App UI Kit]",
+      "key": "9452fd6ec9780f09fe706e8cf74e33e3689fec23"
+    },
+    {
+      "name": "Native - Date Picker Compact [Mobile App UI Kit]",
+      "key": "94552a50f1e9456af4356a14ce0110a34a709725"
+    },
+    {
+      "name": "Native - Date Picker Inline [Mobile App UI Kit]",
+      "key": "f5a252594a00c9ad93806ae851a6d07b67663011"
+    },
+    {
+      "name": "Native - Progress indicator [Mobile App UI Kit]",
+      "key": "f76761467695790bd134c6ead5e1330373a92add"
+    },
+    {
+      "name": "Native - Segmented Control [Mobile App UI Kit]",
+      "key": "dd89a9312380dcca8175a5bbc98f7aa29aa61366"
+    },
+    {
+      "name": "Native - Switch [Mobile App UI Kit]",
+      "key": "24096edbef067b99acf24538b48e020104db3792"
+    },
+    {
+      "name": "Utilities - Status Bar [Mobile App UI Kit]",
+      "key": "68fada7fdda9e357fd95e975191ec0f548e2dc02"
+    },
+    {
+      "name": "Utilities - Home Indicator Native [Mobile App UI Kit]",
+      "key": "61d996e80cbf4b69ffe24351500cb6663a1c87b8"
+    },
+    {
+      "name": "Utilities - Native Keyboard (native)",
+      "key": "96f7fff6610f6b0f5d4a1d3b60c84638c48e4b6d"
+    },
+    {
+      "name": "Navigation - Bottom [Mobile App UI Kit]",
+      "key": "162bdfae32606586c6cbe19c2c64b489f5a39a15"
+    },
+    {
+      "name": "Navigation - Top [Mobile App UI Kit]",
+      "key": "8618860d50e238e79312a78b38e0d6ce90826356"
+    },
+    {
+      "name": "Selectable Box [Mobile App UI Kit]",
+      "key": "88d86586c20c0c7b10d97fa52b44ee5d409b18c4"
+    }
+  ]
+}

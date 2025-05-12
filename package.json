@@ -4,10 +4,12 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build:code": "esbuild src/code.ts --bundle --loader:.json=json --format=iife --outfile=dist/code.js --platform=neutral",
+    "copy:ui":  "copyfiles -u 1 \"src/ui.html\" dist/",
+    "build":   "npm run build:code && npm run copy:ui && touch manifest.json",
+    "watch":   "esbuild src/code.ts --bundle --loader:.json=json --format=iife --outfile=dist/code.js --platform=neutral --watch",
     "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
-    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
-    "watch": "npm run build -- --watch"
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
   },
   "author": "",
   "license": "",
@@ -16,6 +18,7 @@
     "@figma/plugin-typings": "*",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
+    "copyfiles": "^2.4.1",
     "esbuild": "^0.25.3",
     "eslint": "^8.54.0",
     "typescript": "^5.3.2"
