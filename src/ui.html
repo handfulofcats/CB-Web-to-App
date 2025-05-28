@@ -20,18 +20,25 @@ window.onmessage = (event) => {
     const msg = event.data.pluginMessage;
     const container = document.getElementById('content');  
 
+    container.innerHTML = `${msg.type} - ${msg.command}`;
+
     // initialize routines
     if (msg.type === 'init') {
 
         // export component data command
         if (msg.command === 'export-library') {
-
             container.innerHTML = `
                 <p>Copy the JSON of all local components & variant sets below:</p>
                 <textarea id="output" readonly></textarea><br/>
             `;
-
             parent.postMessage({ pluginMessage: { type: 'request-export-data' } }, '*');
+        }
+
+        if (msg.command === 'run-migration') {
+          const direction = msg.direction;
+          container.innerHTML = `
+            <p>Running migration from ${(direction === 'to-app')?`web to app`:`app to web`}</p>`;
+          parent.postMessage({ pluginMessage: { type: 'run-migration' } }, '*');
         }
     }
 
@@ -46,10 +53,18 @@ window.onmessage = (event) => {
     if (msg.type === 'migration-complete') {
       const errors = msg.errors;
       const direction = msg.direction;
-      if (msg.errors.length) {
-        container.innerHTML = `
-          <p>Ran migration from ${(direction === 'to-app')?`web to app`:`app to web`}</p>
-          <p>Here's a list of errors during the migration:</p>
+      let content = `<p>Ran migration from ${(direction === 'to-app')?`web to app`:`app to web`}</p>`;
+
+      if (errors.length) {
+        const rows = errors.map(e =>
+          `<tr>
+            <td>${e.componentName}</td>
+            <td>${e.stage}</td>
+            <td>${e.errorMessage}</td>
+          </tr>`
+        ).join('');
+        container.innerHTML = `${content} 
+        <p>Here's a list of errors during the migration:</p>
           <table>
             <thead>
               <tr>
@@ -59,20 +74,14 @@ window.onmessage = (event) => {
               </tr>
             </thead>
             <tbody>
-              ${() => { 
-                for (const error in errors) {
-                  `
-                  <tr>
-                    <td>${error.componentName}</td>
-                    <td>${error.stage}</td>
-                    <td>${error.errorMessage}</td>
-                  </tr>`
-                }
-              }}
+              ${rows}
             </tbody>
-          </table>`
-        }
+          </table>`;
+      }      
+      else {
+        container.innerHTML = `<p>all found instances migrated succesfully!`;
       }
+    }
       
 };
 

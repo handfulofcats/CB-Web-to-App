@@ -13,7 +13,7 @@ interface OverrideSnapshot {
 }
 
 const loadedFonts = new Set<string>();
-const uiSettings =  { width: 400, height: 300};
+const uiSettings =  { width: 700, height: 500};
 
 
 
@@ -152,7 +152,15 @@ async function applyOverrides(instance: InstanceNode, snapshot: OverrideSnapshot
   }
 
   // set variant properties
-  instance.setProperties(filteredProps);
+  try {
+    instance.setProperties(filteredProps);
+  } catch (e:any) {
+    console.log(instance.name);
+    console.log(allowed);
+    console.log(filteredProps);
+    throw new Error("Issue setting properties.");
+  }
+
 
   //set overrides
   const walk = async (node: SceneNode) => {
@@ -288,7 +296,6 @@ async function swapInstances(artboard: FrameNode, direction:direction) {
     let targetKey = lookup[sourceKey];
 
     // If no match...
-    try {
       if (!targetKey) { 
         const parent = mainComp.parent;
 
@@ -306,20 +313,11 @@ async function swapInstances(artboard: FrameNode, direction:direction) {
           }
         }
       }
+
+      // if still no match, continue to next instance
       if (!targetKey) {
-        throw new Error('No mapping found');
+        continue;
       }
-    } catch (e:any) {
-      errorLog.push({
-        instanceId:    inst.id,
-        //instanceName:  inst.name,
-        componentName: sourceName,
-        componentKey:  sourceKey,
-        stage:         'lookup',
-        errorMessage:  e.message,
-      });
-      continue;
-    }
 
     let replacement: ComponentNode;
     try {
@@ -328,7 +326,7 @@ async function swapInstances(artboard: FrameNode, direction:direction) {
       errorLog.push({
         instanceId:    inst.id,
         //instanceName:  inst.name,
-        componentName: sourceName,
+        componentName: (mainComp.parent) ? mainComp.parent.name : sourceName,
         componentKey:  sourceKey,
         stage:         'import replacement component',
         errorMessage:  e.message,
@@ -343,7 +341,7 @@ async function swapInstances(artboard: FrameNode, direction:direction) {
       errorLog.push({
         instanceId:    inst.id,
         //instanceName:  inst.name,
-        componentName: sourceName,
+        componentName: (mainComp.parent) ? mainComp.parent.name : sourceName,
         componentKey:  sourceKey,
         stage:         'swap',
         errorMessage:  e.message,
@@ -358,7 +356,7 @@ async function swapInstances(artboard: FrameNode, direction:direction) {
       errorLog.push({
         instanceId:    inst.id,
         //instanceName:  inst.name,
-        componentName: sourceName,
+        componentName: (mainComp.parent) ? mainComp.parent.name : sourceName,
         componentKey:  sourceKey,
         stage:         'apply overrides',
         errorMessage:  e.message,
@@ -386,27 +384,34 @@ async function runMigration(direction:direction) {
   }
 }
 
+figma.showUI(__html__, uiSettings);
+
 // listen to the plugin init command
 switch (figma.command) {
   case 'export-library':
-    figma.showUI(__html__, uiSettings);
     figma.ui.postMessage({ type: 'init', command: 'export-library'});
     break;
   case 'to-app':
   case 'to-web':
-    figma.showUI(__html__, uiSettings);
-    runMigration(figma.command as direction);
+    figma.ui.postMessage({ type: 'init', command: 'run-migration', direction: figma.command});
     break;
 }
 
 // Listen for messages from the UI
-figma.ui.onmessage = (msg: { type: string; direction:direction }) => {
+figma.ui.onmessage = (msg: { type: string }) => {
+  console.log("message received");
   switch (msg.type) {
+    case 'ui-loaded':
+      console.log('ui loaded');
+      break;
     case 'close-plugin':
       figma.closePlugin();
       break;
     case 'request-export-data':
       exportLibrary();
+      break;
+    case 'run-migration':
+      runMigration(figma.command as direction);
       break;
   }
 };
@@ -417,4 +422,5 @@ To-do's:
 - Pass succesful swaps log to UI
 - Work on optional "experimental" swaps for more complicated components (e.g. carousel)
 - Undo cloned artboard in case of fatal error
+- deal with instance swaps inside modals
 */

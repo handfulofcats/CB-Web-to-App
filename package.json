@@ -7,7 +7,7 @@
     "build:code": "esbuild src/code.ts --bundle --loader:.json=json --format=iife --outfile=dist/code.js --platform=neutral",
     "copy:ui":  "copyfiles -u 1 \"src/ui.html\" dist/",
     "build":   "npm run build:code && npm run copy:ui && touch manifest.json",
-    "watch":   "esbuild src/code.ts --bundle --loader:.json=json --format=iife --outfile=dist/code.js --platform=neutral --watch",
+    "watch":   "npm run copy:ui && esbuild src/code.ts --bundle --loader:.json=json --format=iife --outfile=dist/code.js --platform=neutral --watch",
     "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
     "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
   },
